@@ -1,40 +1,33 @@
 # Vice Heist
 
-**A StakeEngine-compatible provably fair gaming experience**
+A StakeEngine-compatible 5-reel, 3-row video slot game with provably fair math.
 
-## About
+## Game Details
 
-Vice Heist is an interactive crash-style game built for the StakeEngine platform. Players place bets, start a heist, and try to cash out before the heist crashes! The game uses provably fair technology to ensure complete transparency.
-
-## Features
-
-- Provably Fair Gaming - Verify every game result
-- StakeEngine SDK Integration - Built for the StakeEngine ecosystem
-- Responsive Design - Play on desktop or mobile
-- Auto-Play Mode - Set up automated sessions
-- Real-time Multipliers - Watch your potential winnings grow
-- Game History - Track all your sessions
+- **Type:** 5-Reel, 3-Row Video Slot
+- **Paylines:** 20
+- **Max Win:** 10,000x bet
+- **Target RTP:** 96.0%
+- **Features:** Free Games, Wilds, Scatters, Bonus Vault Pick Round
 
 ## Files
 
 | File | Description |
 |------|-------------|
-| `index.html` | Main game page |
-| `game.js` | Core game logic & StakeEngine integration |
-| `style.css` | Game styling & responsive design |
-| `package.json` | Project configuration & dependencies |
-| `README.md` | This file |
+| `index.html` | Main game frontend |
+| `game.js` | Frontend game logic & StakeEngine Web SDK integration |
+| `style.css` | Game styling |
+| `math/game_config.py` | Math SDK configuration (reels, paytable, RTP) |
+| `math/gamestate.py` | Spin simulation logic |
+| `math/run.py` | Math simulation runner |
+| `math/reels/BR0.csv` | Base game reel strips |
+| `math/reels/FR0.csv` | Free game reel strips |
+| `package.json` | Project configuration |
 
 ## Setup
 
-### Option 1: Direct Upload (GitHub Pages)
-1. Upload all files to your GitHub repository
-2. Enable GitHub Pages in repository settings
-3. Your game will be live at `https://otisr1988.github.io/Vice-heist-`
+### Math Generation (requires Python 3.12+ and Rust/Cargo)
 
-### Option 2: Local Development
 ```bash
-git clone https://github.com/otisr1988/Vice-heist-.git
-cd Vice-heist-
-npm install
-npm start
+cd math
+python3 run.py
